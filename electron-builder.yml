@@ -1,0 +1,33 @@
+appId: com.portforward.app
+productName: PortForward
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - out/**/*
+  - "!**/.vscode/*"
+  - "!src/**/*"
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: zip
+      arch: [x64]
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  signingHashAlgorithms: null
+  sign: null
+mac:
+  target:
+    - dmg
+  category: public.app-category.developer-tools
+  identity: null
+linux:
+  target:
+    - target: deb
+      arch: [x64, arm64]
+    - target: AppImage
+      arch: [x64]
+    - target: tar.gz
+      arch: [x64]
+  category: Development
+npmRebuild: true
