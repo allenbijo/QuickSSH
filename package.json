@@ -2,7 +2,10 @@
   "name": "port-forward",
   "version": "1.0.0",
   "description": "Cross-platform SSH port forwarding manager",
-  "author": "PortForward",
+  "author": {
+    "name": "allenbijo",
+    "email": "gmail@allenbijo.com"
+  },
   "main": "./out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
