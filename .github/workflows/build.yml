@@ -83,6 +83,9 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: false
         run: npx electron-vite build && npx electron-builder --mac --publish never
 
+      - name: Ad-hoc sign DMG (removes hard Gatekeeper block)
+        run: codesign --force --deep --sign - dist/*.dmg || true
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
