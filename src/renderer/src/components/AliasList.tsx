@@ -51,9 +51,9 @@ export default function AliasList() {
   return (
     <div className="flex flex-col h-full">
       <div className="flex-1 min-h-0 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-10 pt-10 pb-12">
+        <div className="max-w-4xl mx-auto px-8 pt-8 pb-10">
           {/* Page header */}
-          <header className="flex items-end justify-between mb-8">
+          <header className="flex items-end justify-between mb-6">
             <div>
               <h1 className="text-[22px] font-semibold text-text-primary tracking-tight leading-none mb-2">
                 Tunnels
@@ -74,7 +74,7 @@ export default function AliasList() {
           </header>
 
           {/* Alias cards */}
-          <div className="space-y-3.5">
+          <div className="space-y-2.5">
             {aliases.map((alias) => (
               <AliasCard
                 key={alias.id}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useAppStore } from '../stores/appStore'
 import type { Alias, PortForward } from '../../../shared/types'
 import { Plus, X, Minus } from 'lucide-react'
+import Select from './ui/Select'
 
 interface Props {
   alias: Alias | null
@@ -54,7 +55,10 @@ export default function AliasEditor({ alias, onClose }: Props) {
   const handleSave = async () => {
     if (!name.trim() || forwards.length === 0) return
 
-    const validForwards = forwards.filter((f) => f.sshHost && f.localPort && f.remotePort)
+    const isValidPort = (p: number) => Number.isInteger(p) && p >= 1 && p <= 65535
+    const validForwards = forwards.filter(
+      (f) => f.sshHost && isValidPort(f.localPort) && isValidPort(f.remotePort) && f.remoteHost.trim()
+    )
     if (validForwards.length === 0) return
 
     const aliasData: Alias = {
@@ -183,20 +187,12 @@ export default function AliasEditor({ alias, onClose }: Props) {
                       <label className="block text-[10px] uppercase tracking-wider text-text-muted mb-1">
                         SSH Host
                       </label>
-                      <select
+                      <Select
                         value={fwd.sshHost}
-                        onChange={(e) => updateForward(fwd.id, 'sshHost', e.target.value)}
-                        className="w-full px-2.5 py-1.5 bg-bg-surface border border-border-subtle rounded-md
-                                   text-sm text-text-primary
-                                   focus:outline-none focus:border-accent/50 transition-colors cursor-pointer"
-                      >
-                        <option value="">Select host...</option>
-                        {hosts.map((h) => (
-                          <option key={h.name} value={h.name}>
-                            {h.name}
-                          </option>
-                        ))}
-                      </select>
+                        onChange={(v) => updateForward(fwd.id, 'sshHost', v)}
+                        placeholder="Select host…"
+                        options={hosts.map((h) => ({ value: h.name, label: h.name }))}
+                      />
                     </div>
                   </div>
 

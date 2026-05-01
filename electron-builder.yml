@@ -7,6 +7,9 @@ files:
   - out/**/*
   - "!**/.vscode/*"
   - "!src/**/*"
+extraResources:
+  - from: resources/icon.ico
+    to: icon.ico
 win:
   target:
     - target: nsis
@@ -14,13 +17,19 @@ win:
     - target: zip
       arch: [x64]
   artifactName: ${productName}-${version}-${arch}.${ext}
+  icon: resources/icon.ico
   signingHashAlgorithms: null
   sign: null
 mac:
   target:
     - dmg
   category: public.app-category.developer-tools
-  identity: null
+  # icon.icns required for macOS — convert icon.ico using iconutil or an online converter
+  # and place at resources/icon.icns
+  identity: "-"
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  entitlementsInherit: null
 linux:
   target:
     - target: deb
@@ -29,5 +38,6 @@ linux:
       arch: [x64]
     - target: tar.gz
       arch: [x64]
+  # icon.png (512x512) required for Linux — place at resources/icon.png
   category: Development
 npmRebuild: true

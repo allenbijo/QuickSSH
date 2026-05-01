@@ -11,6 +11,10 @@ const terminalManager = new TerminalManager()
 let mainWin: BrowserWindow | null = null
 
 function createWindow(): BrowserWindow {
+  const icon = app.isPackaged
+    ? join(process.resourcesPath, 'icon.ico')
+    : join(app.getAppPath(), 'resources/icon.ico')
+
   mainWin = new BrowserWindow({
     width: 1000,
     height: 700,
@@ -19,6 +23,7 @@ function createWindow(): BrowserWindow {
     transparent: true,
     frame: false,
     hasShadow: true,
+    icon,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,

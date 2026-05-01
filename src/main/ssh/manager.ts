@@ -71,6 +71,10 @@ export class SSHManager {
       this.tunnels.delete(aliasId)
     }
 
+    if (this.tunnels.size === 0) {
+      this.stopHealthCheck()
+    }
+
     const aliases = getAliases()
     const alias = aliases.find((a) => a.id === aliasId)
     if (alias) {

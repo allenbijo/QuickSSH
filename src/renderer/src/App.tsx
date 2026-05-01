@@ -33,8 +33,8 @@ export default function App() {
       >
         {hasActive && (
           <FallingPattern
-            color="rgba(255, 255, 255, 0.5)"
-            backgroundColor="rgba(7, 11, 20, 0.55)"
+            color="rgba(255, 255, 255, 0.45)"
+            backgroundColor="rgba(8, 8, 8, 0.6)"
             duration={140}
             blurIntensity="0.6em"
             density={1.2}
@@ -47,7 +47,7 @@ export default function App() {
       {!hasActive && (
         <div
           className="absolute inset-0 z-0"
-          style={{ background: 'rgba(7, 11, 20, 0.92)' }}
+          style={{ background: 'rgba(8, 8, 8, 0.94)' }}
         />
       )}
 
@@ -56,7 +56,7 @@ export default function App() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(7, 11, 20, 0.55) 0%, rgba(7, 11, 20, 0.25) 60%, transparent 100%)',
+            'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(8, 8, 8, 0.55) 0%, rgba(8, 8, 8, 0.2) 60%, transparent 100%)',
           borderRadius: '12px',
         }}
       />

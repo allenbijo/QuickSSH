@@ -91,9 +91,9 @@ export class SSHTunnel extends EventEmitter {
 
       this.process!.on('exit', (code) => {
         clearTimeout(timeout)
-        if (code !== 0 && this._status !== 'connected') {
-          reject(new Error(this.stderrBuffer.trim() || `SSH exited with code ${code}`))
-        }
+        if (this._status === 'connected') return
+        const errMsg = this.stderrBuffer.trim() || `SSH exited with code ${code}`
+        reject(new Error(errMsg))
       })
 
       this.process!.on('error', (err) => {

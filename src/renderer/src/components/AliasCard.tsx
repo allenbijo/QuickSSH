@@ -52,9 +52,9 @@ export default function AliasCard({ alias, onEdit, onTerminal }: Props) {
 
   return (
     <div
-      className={`group relative rounded-xl border border-white/10 bg-[rgba(20,28,46,0.55)] backdrop-blur-2xl
+      className={`group relative rounded-xl border border-white/8 bg-[rgba(18,18,18,0.6)] backdrop-blur-2xl
                   transition-all duration-200 overflow-hidden
-                  hover:border-white/20 hover:bg-[rgba(24,33,54,0.65)]
+                  hover:border-white/15 hover:bg-[rgba(24,24,24,0.7)]
                   ${status.cardGlow}`}
     >
       {/* Status accent strip */}
@@ -76,9 +76,9 @@ export default function AliasCard({ alias, onEdit, onTerminal }: Props) {
         </button>
 
         {/* Name + meta */}
-        <div className="flex-1 min-w-0 py-6 pl-3 pr-4">
-          <div className="flex items-center gap-2.5 mb-2">
-            <span className="font-semibold text-[15px] text-text-primary truncate">
+        <div className="flex-1 min-w-0 py-3.5 pl-3 pr-4">
+          <div className="flex items-center gap-2.5 mb-1">
+            <span className="font-semibold text-[14px] text-text-primary truncate">
               {alias.name}
             </span>
           </div>
@@ -93,7 +93,7 @@ export default function AliasCard({ alias, onEdit, onTerminal }: Props) {
         </div>
 
         {/* Action buttons — visible on hover */}
-        <div className="flex items-center gap-0.5 py-6 opacity-60 group-hover:opacity-100 transition-opacity">
+        <div className="flex items-center gap-0.5 py-3.5 opacity-60 group-hover:opacity-100 transition-opacity">
           {isActive && (
             <button
               onClick={() => refreshAlias(alias.id)}
@@ -133,7 +133,7 @@ export default function AliasCard({ alias, onEdit, onTerminal }: Props) {
         </div>
 
         {/* Divider */}
-        <div className="w-px bg-white/10 my-4 mx-2" />
+        <div className="w-px bg-white/8 my-3 mx-2" />
 
         {/* Toggle switch */}
         <div className="flex items-center px-3">
@@ -157,11 +157,11 @@ export default function AliasCard({ alias, onEdit, onTerminal }: Props) {
 
       {/* Expanded forwards list */}
       {expanded && alias.forwards.length > 0 && (
-        <div className="border-t border-white/8 bg-black/20 px-5 py-4 space-y-2">
+        <div className="border-t border-white/8 bg-black/15 px-5 py-2.5 space-y-1.5">
           {alias.forwards.map((fwd) => (
             <div
               key={fwd.id}
-              className="flex items-center gap-3 text-xs py-2 px-3.5 rounded-md bg-white/5 border border-white/5"
+              className="flex items-center gap-3 text-xs py-1.5 px-3 rounded-md bg-white/4 border border-white/5"
             >
               <span className="font-mono text-accent font-semibold">
                 :{fwd.localPort}

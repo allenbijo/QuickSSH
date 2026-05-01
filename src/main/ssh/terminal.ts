@@ -24,7 +24,6 @@ export class TerminalManager {
         ...process.env,
         TERM: 'xterm-256color',
       },
-      windowsHide: false,
     })
 
     proc.stdout?.on('data', (data: Buffer) => {

@@ -2,19 +2,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0F172A;
-  --color-bg-surface: #1E293B;
-  --color-bg-elevated: #273549;
-  --color-border-default: #475569;
-  --color-border-subtle: #334155;
+  --color-bg-primary: #0D0D0D;
+  --color-bg-surface: #1A1A1A;
+  --color-bg-elevated: #242424;
+  --color-border-default: #3D3D3D;
+  --color-border-subtle: #2A2A2A;
   --color-accent: #22C55E;
   --color-accent-hover: #16A34A;
   --color-destructive: #EF4444;
   --color-destructive-hover: #DC2626;
   --color-warning: #EAB308;
-  --color-text-primary: #F8FAFC;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748B;
+  --color-text-primary: #F2F2F2;
+  --color-text-secondary: #A0A0A0;
+  --color-text-muted: #606060;
 }
 
 html,
@@ -47,12 +47,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #2A2A2A;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #383838;
 }
 
 .toggle-switch {
@@ -60,7 +60,7 @@ body {
   width: 44px;
   height: 24px;
   border-radius: 12px;
-  background: #334155;
+  background: #2A2A2A;
   cursor: pointer;
   transition: background 200ms ease;
   flex-shrink: 0;
@@ -102,8 +102,8 @@ body {
 }
 
 .glass {
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border-bottom: 1px solid rgba(60, 60, 60, 0.35);
 }
