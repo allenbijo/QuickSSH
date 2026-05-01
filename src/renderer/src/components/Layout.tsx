@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-accent animate-pulse-dot" />
           </div>
           <span className="text-sm font-semibold text-text-primary tracking-tight">
-            PortForward
+            Quick SSH
           </span>
           {activeCount > 0 && (
             <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-accent/15 text-accent font-medium border border-accent/20">

@@ -1,5 +1,5 @@
 {
-  "name": "port-forward",
+  "name": "quick-ssh",
   "version": "1.0.0",
   "description": "Cross-platform SSH port forwarding manager",
   "author": {

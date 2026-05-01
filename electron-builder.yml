@@ -1,5 +1,5 @@
-appId: com.portforward.app
-productName: PortForward
+appId: com.quickssh.app
+productName: Quick SSH
 directories:
   buildResources: resources
   output: dist
